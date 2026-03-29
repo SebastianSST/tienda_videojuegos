@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tienda de Video Juegos Mor{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="text-body">Bienvenido a la tienda de video juegos Mor</h1>
+    <p class="text-body">Sientese y Disfrutelo.</p>
+    <img src="{% static 'home/img/logo.png' %}" alt="Logo.png" class="img-fluid my-4">
+
+    <div class="alert alert-primary">!Nueva Coleccion de Video Juegos esta semana!</div>
+    <div class="alert alert-warning">Recuerda revisar las restricciones de edad en cada juego.</div>
+    <div class="alert alert-danger">Algunos juegos tienen stock limitado, Correa, perra, Corre</div>
+</div>
+{% endblock %}
