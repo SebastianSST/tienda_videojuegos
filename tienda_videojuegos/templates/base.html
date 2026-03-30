@@ -61,15 +61,29 @@
                     </ul>
 
                     <!-- Buscador -->
-
+                    <form class="d-flex mb-2 mb-lg-0 me-lg-3 order-5 order-lg-4" role="search" action="{% url 'buscar_juegos' %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Buscar..." aria-label="Buscar"
+                            value="{{ request.GET.q|default:'' }}">
+                        <button class="btn btn-outline-info" type="submit">Buscar</button>
+                    </form>
 
                     <!-- Carrito -->
-
-
-                    <!-- Usuario / Invitado -->
- 
+                    <ul class="navbar-nav mb-2 mb-lg-0 order-6 order-lg-5 me-3">
+                        <li class="nav-item position-relative">
+                            <a href="{% url 'carrito:ver_carrito' %}" class="nav-link text-white">
+                            <div class="position-relative d-inline-block">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                                {% if carrito_total_items > 0 %}
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger small">
+                                        {{ carrito_total_items }}
+                                    </span>
+                                {% endif %}
+                            </div>
+                             </a>
                         </li>
                     </ul>
+
+                    
 
                 </div>
             </div>
